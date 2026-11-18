@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="KamayLab icono">
+  <g id="icon">
+    <rect x="86" y="391" width="340" height="80" rx="14" fill="#1C1917"/>
+    <rect x="86" y="251" width="80" height="220" rx="14" fill="#1C1917"/>
+    <rect x="346" y="251" width="80" height="220" rx="14" fill="#1C1917"/>
+    <rect x="216" y="171" width="80" height="300" rx="14" fill="#1C1917"/>
+    <circle cx="256" cy="86" r="45" fill="#E8A13D"/>
+  </g>
+</svg>
