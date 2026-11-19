@@ -49,6 +49,8 @@ header{position:sticky;top:0;z-index:30;background:rgba(250,247,242,.88);backdro
 .hero h1 .shine{background:linear-gradient(90deg,#ffd27a,#fff3d1,#e8a13d,#ffd27a);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite}
 @keyframes shine{to{background-position:300% 0}}
 .hero p.lead{font-size:clamp(16px,2.2vw,20px);max-width:620px;color:#f5e6e1}
+.hero-hl{display:inline-block;margin-top:14px;background:var(--cream);color:var(--vino-dark);font-weight:600;font-size:clamp(15px,2vw,18px);padding:12px 16px;border-radius:16px;border-left:5px solid var(--amber);box-shadow:0 10px 30px rgba(0,0,0,.25);max-width:620px;line-height:1.45}
+.hero-hl b{color:var(--vino);font-family:"Bricolage Grotesque",sans-serif;font-weight:800}
 .countdown{display:flex;gap:10px;margin:26px 0 22px;flex-wrap:wrap}
 .cd{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:10px 14px;min-width:78px;text-align:center}
 .cd strong{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:32px;line-height:1}
@@ -205,7 +207,8 @@ footer a{color:#fff;font-weight:600}
   <div class="wrap">
     <span class="tag">🎄 Colección Navidad 2026</span>
     <h1 class="display">Regalos que se imprimen <span class="shine">con cariño</span></h1>
-    <p class="lead">Decoración y detalles navideños hechos capa por capa en Lima. Muchos llevan el nombre que tú elijas. Pide por WhatsApp y te llega en 24 a 48 horas.</p>
+    <p class="lead">Decoración y detalles navideños hechos capa por capa en Lima.</p>
+    <p class="hero-hl">Somos <b>KamayLab</b>: tú lo imaginas, nosotros lo personalizamos y lo hacemos realidad ✨</p>
     <div class="countdown" id="countdown" aria-live="polite">
       <div class="cd"><strong id="cdD">--</strong><small>días</small></div>
       <div class="cd"><strong id="cdH">--</strong><small>horas</small></div>
@@ -258,7 +261,7 @@ footer a{color:#fff;font-weight:600}
   <div class="wrap">
     <h2 class="display">¿Cómo pido?</h2>
     <div class="steps-grid">
-      <div class="step"><div class="n">1</div><h3>Elige tu pieza</h3><p>Escoge el tamaño y el color en la tarjeta, y toca “Pedir por WhatsApp”. El mensaje ya va escrito con tu elección.</p></div>
+      <div class="step"><div class="n">1</div><h3>Elige tu pieza</h3><p>Escoge tu pieza (y su tamaño o color, si aplica) y toca “Pedir por WhatsApp”. El mensaje ya va escrito con tu elección.</p></div>
       <div class="step"><div class="n">2</div><h3>Personalízala</h3><p>Si lleva nombre, nos lo escribes en el chat. También nos puedes indicar el color de tu preferencia según la gama de colores.</p></div>
       <div class="step"><div class="n">3</div><h3>Recíbelo en 24 a 48 h</h3><p class="fine">El tiempo depende de la pieza escogida y la cantidad.</p></div>
       <div class="step"><div class="n">🚚</div><h3>Envío</h3><p>Enviamos por courier a Lima Metropolitana y Callao.</p><p class="fine">El costo de envío es adicional al precio de la pieza y depende del distrito.</p></div>
@@ -307,25 +310,25 @@ var C = {
 var PRODUCTS = [
   {name:"Set Belén", cat:"Sets", badge:"Ahorra S/ 9", gold:true, img:"img/set-belen.jpg",
    desc:"Nacimiento y portavela con vela LED. Juntos iluminan la mesa de Navidad.",
-   sizes:[{l:"Nacimiento 10 cm + vela", p:65, note:"Por separado S/ 74"}], colors:["blanco","beige","transparente","dorado"]},
+   sizes:[{l:"Nacimiento 10 cm + vela", p:65, note:"Por separado S/ 74"}]},
   {name:"Pino japandi", cat:"Árbol", img:"img/pino-japandi.jpg",
    desc:"Pino minimalista de líneas suaves con estrella, para mesa o repisa.",
-   sizes:[{l:"15 cm", p:39},{l:"25 cm", p:59}], colors:["verde","blanco","dorado","vino"]},
+   sizes:[{l:"15 cm", p:39},{l:"25 cm", p:59}]},
   {name:"Nacimiento", cat:"Mesa y hogar", img:"img/nacimiento.jpg",
    desc:"La Sagrada Familia bajo el pesebre y la estrella de Belén.",
    sizes:[{l:"10 cm", p:49},{l:"15 cm", p:69}], colors:["blanco","beige","transparente","dorado"]},
   {name:"Portavela geométrico", cat:"Mesa y hogar", badge:"Nuevo", img:"img/portavela.jpg",
    desc:"Facetado, con vela LED incluida. Luz cálida y sin fuego.",
-   sizes:[{l:"7 cm", p:25}], colors:["blanco","beige","transparente","dorado"]},
+   sizes:[{l:"7 cm", p:25}]},
   {name:"Adorno con nombre", cat:"Personalizados", badge:"Top regalo", named:true, img:"img/adorno-nombre.jpg",
    desc:"Esfera calada con estrella y el nombre que elijas.",
-   sizes:[{l:"8 cm", p:15, note:"Pack x4: S/ 49"}], colors:["rojo","verde","dorado","blanco"]},
+   sizes:[{l:"8 cm", p:15, note:"Pack x4: S/ 49"}]},
   {name:"Esfera con nombre", cat:"Personalizados", named:true, img:"img/esfera-nombre.jpg",
    desc:"Aro con copos de nieve y el nombre en letra cursiva.",
-   sizes:[{l:"8 cm", p:15, note:"Pack x4: S/ 49"}], colors:["rojo","verde","naranja","dorado"]},
+   sizes:[{l:"8 cm", p:15, note:"Pack x4: S/ 49"}]},
   {name:"Gorro navideño con nombre", cat:"Personalizados", named:true, img:"img/llavero-gorro.jpg",
    desc:"Como llavero o adorno del árbol. Ideal para el amigo secreto.",
-   sizes:[{l:"6 cm", p:15}], colors:["rojo","verde"]},
+   sizes:[{l:"6 cm", p:15}]},
   {name:"Reno tejido", cat:"Mesa y hogar", img:"img/reno-tejido.jpg",
    desc:"Textura de tejido a crochet con nariz roja.",
    sizes:[{l:"10 cm", p:25}], colors:["marron","beige","blanco"]},
@@ -334,13 +337,13 @@ var PRODUCTS = [
    sizes:[{l:"10 cm y 6 cm", p:25}], colors:["marron","negro","blanco","gris"], colorNote:"Elige dos colores, por ejemplo marrón y negro"},
   {name:"Bandeja osito", cat:"Personalizados", named:true, img:"img/bandeja-osito.jpg",
    desc:"Osito que guarda tus llaves, anillos y monedas. Puede llevar un nombre.",
-   sizes:[{l:"15 cm de largo", p:39}], colors:["beige","blanco","rosado","gris"]},
+   sizes:[{l:"15 cm de largo", p:39}]},
   {name:"Porta toallas gorro de Santa", cat:"Cocina", img:"img/porta-toallas-santa.jpg",
    desc:"Para rollos de papel toalla estándar. Útil todo el año.",
-   sizes:[{l:"32 cm de alto", p:45}], colors:["rojo","verde"]},
+   sizes:[{l:"32 cm de alto", p:45}]},
   {name:"Clips cocodrilo (x3)", cat:"Cocina", img:"img/clip-navidad.jpg",
    desc:"Cierran tus bolsas de panetón y galletas.",
-   sizes:[{l:"10 cm c/u", p:19}], colors:["rojo","verde","blanco"]}
+   sizes:[{l:"10 cm c/u", p:19}]}
 ];
 /* ====================================================== */
 
@@ -350,7 +353,7 @@ function money(n){ return "S/ " + n.toFixed(2) }
 function waLink(p, sel){
   if (!p) return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("¡Hola KamayLab! 🎄 Quiero hacer un pedido de la colección Navidad.");
   var s = p.sizes[sel.size];
-  var t = "¡Hola KamayLab! 🎄 Quiero pedir: " + p.name + " · " + s.l + " · color " + cname(p.colors[sel.color]) + " (" + money(s.p) + ")." + (p.named ? " El nombre sería: " : "");
+  var t = "¡Hola KamayLab! 🎄 Quiero pedir: " + p.name + " · " + s.l + (p.colors ? " · color " + cname(p.colors[sel.color]) : "") + " (" + money(s.p) + ")." + (p.named ? " El nombre sería: " : "");
   return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(t);
 }
 ["headWa","heroWa","footWa","floatWa"].forEach(function(id){ document.getElementById(id).href = waLink() });
@@ -378,7 +381,7 @@ function card(p, i){
   var sizesHtml = p.sizes.length > 1
     ? '<div class="opts" role="group" aria-label="Tamaño">' + p.sizes.map(function(s, k){ return '<button type="button" class="size" data-k="' + k + '" aria-pressed="' + (k === 0) + '">' + s.l + '</button>' }).join("") + '</div>'
     : '<span class="size-one">📏 ' + p.sizes[0].l + '</span>';
-  var colorsHtml = '<div class="swatches" role="group" aria-label="Color">' + p.colors.map(function(c, k){
+  var colorsHtml = !p.colors ? '' : '<div class="swatches" role="group" aria-label="Color">' + p.colors.map(function(c, k){
       return '<button type="button" class="sw' + (c === "transparente" ? " clear" : "") + '" data-k="' + k + '" aria-pressed="' + (k === 0) + '" aria-label="' + cname(c) + '" title="' + cname(c) + '" style="--c:' + C[c] + '"></button>' }).join("") +
     '<span class="cname">' + cname(p.colors[0]) + '</span></div>' + (p.colorNote ? '<span class="cnote">' + p.colorNote + '</span>' : '');
   a.innerHTML =
@@ -393,7 +396,7 @@ function card(p, i){
     var s = p.sizes[sel.size];
     var pv = a.querySelector(".pv"); pv.textContent = money(s.p); pv.classList.remove("bump"); void pv.offsetWidth; pv.classList.add("bump");
     a.querySelector(".pn").textContent = s.note || "";
-    a.querySelector(".cname").textContent = cname(p.colors[sel.color]);
+    if (p.colors) a.querySelector(".cname").textContent = cname(p.colors[sel.color]);
     a.querySelector(".wa").href = waLink(p, sel);
   }
   a.querySelectorAll(".size").forEach(function(b){ b.onclick = function(){ sel.size = +b.dataset.k; a.querySelectorAll(".size").forEach(function(x){ x.setAttribute("aria-pressed", x === b) }); update() } });
