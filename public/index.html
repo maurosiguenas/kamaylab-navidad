@@ -109,7 +109,8 @@ header{position:sticky;top:0;z-index:30;background:rgba(250,247,242,.88);backdro
 .step p{font-size:14px;color:var(--ink-soft);line-height:1.5}
 
 /* Cierre */
-.closing{background:var(--pino);color:#fff;text-align:center;position:relative;overflow:hidden}
+.closing{background:radial-gradient(120% 120% at 50% 0%,#a12b3b 0%,var(--vino) 50%,var(--vino-dark) 100%);color:var(--cream);text-align:center;position:relative;overflow:hidden;border-top:4px solid var(--amber)}
+.closing h2 span{color:#ffd27a}
 .closing .wrap{padding:56px 20px}
 .closing h2{font-size:clamp(28px,4.5vw,44px);margin-bottom:10px}
 .closing p{opacity:.9;max-width:560px;margin:0 auto 22px}
@@ -175,9 +176,10 @@ footer a{color:#fff;font-weight:600}
 .steps-grid{grid-template-columns:repeat(4,1fr)!important}
 .pay{padding:0 0 64px}
 .pay h2{font-size:clamp(28px,4vw,40px);margin-bottom:20px}
-.pay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:760px}
+.pay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px}
+.pay-logo{width:46px;height:46px;border-radius:12px;object-fit:contain;flex:none}
 .pay-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;display:flex;gap:14px;align-items:center}
-.pay-ic{flex:none;width:46px;height:46px;border-radius:14px;color:#fff;display:grid;place-items:center;font-weight:800;font-size:20px}
+.pay-ic{flex:none;width:46px;height:46px;border-radius:12px;background:var(--cream-deep);display:grid;place-items:center;font-size:24px}
 .pay-card b{display:block;font-size:16px}
 .pay-card span{font-size:13px;color:var(--ink-soft)}
 @media (max-width:980px){.steps-grid{grid-template-columns:repeat(2,1fr)!important}}
@@ -215,10 +217,7 @@ footer a{color:#fff;font-weight:600}
       <div class="cd"><strong id="cdM">--</strong><small>min</small></div>
       <span class="cd-label">para Navidad 🎅</span>
     </div>
-    <div class="hero-cta">
-      <a class="btn btn-amber" href="#galeria">Ver la colección</a>
-      <a class="btn btn-ghost" id="heroWa" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
-    </div>
+    
   </div>
 </section>
 
@@ -227,7 +226,7 @@ footer a{color:#fff;font-weight:600}
     <div class="gallery-head">
       <div>
         <h2 class="display">La colección</h2>
-        <p>Una probadita de lo que hacemos. Toca una categoría y elige tu favorito.</p>
+        <p>Te mostramos nuestra colección. Toca una categoría y elige tu favorito.</p>
       </div>
     </div>
     <div class="filters" id="filters" role="group" aria-label="Filtrar por categoría"></div>
@@ -259,7 +258,7 @@ footer a{color:#fff;font-weight:600}
 
 <section class="steps" id="como-pido">
   <div class="wrap">
-    <h2 class="display">¿Cómo pido?</h2>
+    <h2 class="display">¿Cómo pedir?</h2>
     <div class="steps-grid">
       <div class="step"><div class="n">1</div><h3>Elige tu pieza</h3><p>Escoge tu pieza (y su tamaño o color, si aplica) y toca “Pedir por WhatsApp”. El mensaje ya va escrito con tu elección.</p></div>
       <div class="step"><div class="n">2</div><h3>Personalízala</h3><p>Si lleva nombre, nos lo escribes en el chat. También nos puedes indicar el color de tu preferencia según la gama de colores.</p></div>
@@ -273,15 +272,16 @@ footer a{color:#fff;font-weight:600}
   <div class="wrap">
     <h2 class="display">Métodos de pago</h2>
     <div class="pay-grid">
-      <div class="pay-card"><span class="pay-ic" style="background:#742284">Y</span><div><b>Yape</b><span>Te pasamos el número al confirmar tu pedido</span></div></div>
-      <div class="pay-card"><span class="pay-ic" style="background:#1c1917">🏦</span><div><b>Transferencia bancaria</b><span>Te enviamos los datos de la cuenta por WhatsApp</span></div></div>
+      <div class="pay-card"><img src="img/yape.png" alt="" class="pay-logo"><b>Yape</b></div>
+      <div class="pay-card"><img src="img/plin.png" alt="" class="pay-logo"><b>Plin</b></div>
+      <div class="pay-card"><span class="pay-ic">🏦</span><b>Transferencia bancaria</b></div>
     </div>
   </div>
 </section>
 
 <section class="closing">
   <div class="wrap">
-    <h2 class="display">¿Regalos para tu equipo o tu empresa?</h2>
+    <h2 class="display">¿Regalos para tu equipo <span>o tu empresa?</span> 🎁</h2>
     <p>Gorros con nombre, adornos o bandejas con el logo de tu empresa. Cotizamos por cantidad.</p>
     <a class="btn btn-amber" id="corpWa" href="#" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
   </div>
@@ -310,31 +310,31 @@ var C = {
 var PRODUCTS = [
   {name:"Set Belén", cat:"Sets", badge:"Ahorra S/ 9", gold:true, img:"img/set-belen.jpg",
    desc:"Nacimiento y portavela con vela LED. Juntos iluminan la mesa de Navidad.",
-   sizes:[{l:"Nacimiento 10 cm + vela", p:65, note:"Por separado S/ 74"}]},
+   sizes:[{l:"Nacimiento 10 cm de alto + portavela 7 cm de alto", p:65, note:"Por separado S/ 74"}]},
   {name:"Pino japandi", cat:"Árbol", img:"img/pino-japandi.jpg",
    desc:"Pino minimalista de líneas suaves con estrella, para mesa o repisa.",
-   sizes:[{l:"15 cm", p:39},{l:"25 cm", p:59}]},
+   sizes:[{l:"15 cm de alto", p:39},{l:"25 cm de alto", p:59}]},
   {name:"Nacimiento", cat:"Mesa y hogar", img:"img/nacimiento.jpg",
    desc:"La Sagrada Familia bajo el pesebre y la estrella de Belén.",
-   sizes:[{l:"10 cm", p:49},{l:"15 cm", p:69}], colors:["blanco","beige","transparente","dorado"]},
+   sizes:[{l:"10 cm de alto", p:49},{l:"15 cm de alto", p:69}], colors:["blanco","beige","transparente","dorado"]},
   {name:"Portavela geométrico", cat:"Mesa y hogar", badge:"Nuevo", img:"img/portavela.jpg",
    desc:"Facetado, con vela LED incluida. Luz cálida y sin fuego.",
-   sizes:[{l:"7 cm", p:25}]},
+   sizes:[{l:"7 cm de alto · 8 cm de ancho", p:25}]},
   {name:"Adorno con nombre", cat:"Personalizados", badge:"Top regalo", named:true, img:"img/adorno-nombre.jpg",
    desc:"Esfera calada con estrella y el nombre que elijas.",
-   sizes:[{l:"8 cm", p:15, note:"Pack x4: S/ 49"}]},
+   sizes:[{l:"8 cm de diámetro", p:15, note:"Pack x4: S/ 49"}]},
   {name:"Esfera con nombre", cat:"Personalizados", named:true, img:"img/esfera-nombre.jpg",
    desc:"Aro con copos de nieve y el nombre en letra cursiva.",
-   sizes:[{l:"8 cm", p:15, note:"Pack x4: S/ 49"}]},
+   sizes:[{l:"8 cm de diámetro", p:15, note:"Pack x4: S/ 49"}]},
   {name:"Gorro navideño con nombre", cat:"Personalizados", named:true, img:"img/llavero-gorro.jpg",
    desc:"Como llavero o adorno del árbol. Ideal para el amigo secreto.",
-   sizes:[{l:"6 cm", p:15}]},
+   measure:"9 cm de ancho", sizes:[{l:"1 gorro", p:15},{l:"Pack x4", p:39, note:"Cada gorro extra: + S/ 5"}]},
   {name:"Reno tejido", cat:"Mesa y hogar", img:"img/reno-tejido.jpg",
    desc:"Textura de tejido a crochet con nariz roja.",
-   sizes:[{l:"10 cm", p:25}], colors:["marron","beige","blanco"]},
+   sizes:[{l:"10 cm de alto", p:25}], colors:["marron","beige","blanco"]},
   {name:"Dúo de renos", cat:"Mesa y hogar", img:"img/duo-renos.jpg",
    desc:"Dos renos minimalistas: uno grande y uno pequeño.",
-   sizes:[{l:"10 cm y 6 cm", p:25}], colors:["marron","negro","blanco","gris"], colorNote:"Elige dos colores, por ejemplo marrón y negro"},
+   sizes:[{l:"10 cm y 6 cm de alto", p:25}], colors:["marron","negro","blanco","gris"], colorNote:"Elige dos colores, por ejemplo marrón y negro"},
   {name:"Bandeja osito", cat:"Personalizados", named:true, img:"img/bandeja-osito.jpg",
    desc:"Osito que guarda tus llaves, anillos y monedas. Puede llevar un nombre.",
    sizes:[{l:"15 cm de largo", p:39}]},
@@ -343,7 +343,7 @@ var PRODUCTS = [
    sizes:[{l:"32 cm de alto", p:45}]},
   {name:"Clips cocodrilo (x3)", cat:"Cocina", img:"img/clip-navidad.jpg",
    desc:"Cierran tus bolsas de panetón y galletas.",
-   sizes:[{l:"10 cm c/u", p:19}]}
+   sizes:[{l:"10 cm de largo c/u", p:19}]}
 ];
 /* ====================================================== */
 
@@ -353,10 +353,10 @@ function money(n){ return "S/ " + n.toFixed(2) }
 function waLink(p, sel){
   if (!p) return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("¡Hola KamayLab! 🎄 Quiero hacer un pedido de la colección Navidad.");
   var s = p.sizes[sel.size];
-  var t = "¡Hola KamayLab! 🎄 Quiero pedir: " + p.name + " · " + s.l + (p.colors ? " · color " + cname(p.colors[sel.color]) : "") + " (" + money(s.p) + ")." + (p.named ? " El nombre sería: " : "");
+  var t = "¡Hola KamayLab! 🎄 Quiero pedir: " + p.name + " · " + s.l + (p.colors ? " · color " + cname(p.colors[sel.color]) : "") + " (" + money(s.p) + ")." + (p.named ? (/Pack/.test(s.l) ? " Los nombres serían: " : " El nombre sería: ") : "");
   return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(t);
 }
-["headWa","heroWa","footWa","floatWa"].forEach(function(id){ document.getElementById(id).href = waLink() });
+["headWa","footWa","floatWa"].forEach(function(id){ document.getElementById(id).href = waLink() });
 document.getElementById("ideaWa").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("¡Hola KamayLab! 💡 Tengo una idea para imprimir: ");
 document.getElementById("corpWa").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("¡Hola KamayLab! Quiero cotizar regalos navideños para mi empresa.");
 
@@ -381,6 +381,7 @@ function card(p, i){
   var sizesHtml = p.sizes.length > 1
     ? '<div class="opts" role="group" aria-label="Tamaño">' + p.sizes.map(function(s, k){ return '<button type="button" class="size" data-k="' + k + '" aria-pressed="' + (k === 0) + '">' + s.l + '</button>' }).join("") + '</div>'
     : '<span class="size-one">📏 ' + p.sizes[0].l + '</span>';
+  if (p.measure) sizesHtml = '<span class="size-one">📏 ' + p.measure + '</span>' + sizesHtml;
   var colorsHtml = !p.colors ? '' : '<div class="swatches" role="group" aria-label="Color">' + p.colors.map(function(c, k){
       return '<button type="button" class="sw' + (c === "transparente" ? " clear" : "") + '" data-k="' + k + '" aria-pressed="' + (k === 0) + '" aria-label="' + cname(c) + '" title="' + cname(c) + '" style="--c:' + C[c] + '"></button>' }).join("") +
     '<span class="cname">' + cname(p.colors[0]) + '</span></div>' + (p.colorNote ? '<span class="cnote">' + p.colorNote + '</span>' : '');
